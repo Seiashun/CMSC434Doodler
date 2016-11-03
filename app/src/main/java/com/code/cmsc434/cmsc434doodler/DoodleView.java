@@ -42,7 +42,7 @@ public class DoodleView extends View {
         _paintDoodle.setColor(Color.BLACK);
         _paintDoodle.setAntiAlias(true);
         _paintDoodle.setStyle(Paint.Style.STROKE);
-        _paintDoodle.setStrokeWidth(3.0f);
+        _paintDoodle.setStrokeWidth(4.0f);
     }
 
     @Override
