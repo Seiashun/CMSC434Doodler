@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,29 +11,150 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.code.cmsc434.cmsc434doodler.MainActivity">
 
-    <GridLayout
+    <com.code.cmsc434.cmsc434doodler.DoodleView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:background="@drawable/doodle_border"
+        android:id="@+id/id_doodleview"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_height="330dp" />
+
+    <TextView
+        android:text="Blue"
+        android:textSize="11sp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_text_blue"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/id_text_red"
+        android:layout_alignLeft="@+id/id_text_red"
+        android:layout_alignStart="@+id/id_text_red"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:text="Red"
+        android:textSize="11sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/id_text_red"
+        android:textAlignment="textEnd"
+        android:layout_width="40dp"
+        android:layout_below="@+id/id_doodleview"
+        android:layout_toRightOf="@+id/id_button_clear"
+        android:layout_toEndOf="@+id/id_button_clear" />
+
+    <TextView
+        android:text="Green"
+        android:textSize="11sp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_text_blue"
+        android:layout_alignLeft="@+id/id_text_blue"
+        android:layout_alignStart="@+id/id_text_blue"
+        android:layout_marginTop="10dp"
+        android:id="@+id/id_text_green"
+        android:textAlignment="textEnd" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id_text_red"
+        android:layout_toRightOf="@+id/id_text_red"
+        android:id="@+id/id_seek_red"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-8dp" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id_text_blue"
+        android:layout_toRightOf="@+id/id_text_blue"
+        android:id="@+id/id_seek_blue"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-8dp" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id_text_green"
+        android:layout_toRightOf="@+id/id_text_green"
+        android:id="@+id/id_seek_green"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-8dp" />
+
+    <TextView
+        android:text="Size"
+        android:textSize="11sp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_text_green"
+        android:layout_alignLeft="@+id/id_text_green"
+        android:layout_alignStart="@+id/id_text_green"
+        android:layout_marginTop="10dp"
+        android:id="@+id/id_text_size"
+        android:textAlignment="textEnd" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id_text_size"
+        android:layout_toRightOf="@+id/id_text_size"
+        android:id="@+id/id_seek_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-8dp" />
+
+    <TextView
+        android:text="Opacity"
+        android:textSize="11sp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_text_size"
+        android:layout_alignLeft="@+id/id_text_size"
+        android:layout_alignStart="@+id/id_text_size"
+        android:layout_marginTop="10dp"
+        android:id="@+id/id_text_alpha"
+        android:textAlignment="textEnd" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id_text_alpha"
+        android:layout_toRightOf="@+id/id_text_alpha"
+        android:id="@+id/id_seek_alpha"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-8dp"
+        android:progress="100" />
+
+    <Button
+        android:text="Clear Canvas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_button_clear"
+        android:layout_alignTop="@+id/id_seek_red"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true" />
 
-        <com.code.cmsc434.cmsc434doodler.DoodleView
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:background="@drawable/doodle_border"
-            android:id="@+id/id_doodleview" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_undo_black"
+        android:id="@+id/id_undo_button"
+        android:layout_alignTop="@+id/id_text_green"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-        <Button
-            android:text="Clear Canvas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/id_button_clear"
-            android:layout_row="8"
-            android:layout_column="0" />
-    </GridLayout>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_redo_black"
+        android:id="@+id/id_redo_button"
+        android:layout_alignTop="@+id/id_text_green"
+        android:layout_toLeftOf="@+id/id_text_green"
+        android:layout_toStartOf="@+id/id_text_green" />
 
 </RelativeLayout>
